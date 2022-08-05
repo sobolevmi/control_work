@@ -19,9 +19,11 @@ string [] CreateNewArrayFrom3SymbolsElements (string [] anyArray, int count)
     int k = 0;
     for (int j = 0; j < anyArray.Length; j++)
     {
-        if (anyArray[j].Length <= 3)                                    
-        newArray [k] = anyArray [j];
-        k++;
+        if (anyArray[j].Length <= 3)
+        {                                    
+            newArray [k] = anyArray [j];
+            k++;
+        }
     }
     return newArray;
 }
@@ -34,3 +36,27 @@ void ShowArray (string [] randomArray)
         Console.Write (randomArray [m] + " ");
     }
 }
+
+// код самой программы
+Console.WriteLine ("Введите количество элементов создаваемого массива: ");
+int size = Convert.ToInt32 (Console.ReadLine ());
+string [] array = CreateUserArray (size);
+
+int newArraySize = 0;
+for (int i = 0; i < array.Length; i++)
+{
+    if (array [i].Length <= 3) newArraySize++;
+}
+
+if (newArraySize > 0)
+    {
+        string [] resultArray = CreateNewArrayFrom3SymbolsElements (array, newArraySize);
+        ShowArray (array);
+        Console.Write (" -> ");
+        ShowArray (resultArray);
+    }
+else
+    {
+        ShowArray (array);
+        Console.Write ("-> []");
+    }
