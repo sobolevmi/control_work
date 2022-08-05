@@ -25,3 +25,12 @@ string [] CreateNewArrayFrom3SymbolsElements (string [] anyArray, int count)
     }
     return newArray;
 }
+
+void ShowArray (string [] randomArray)
+// метод по выведению массива на экран
+{
+    for (int m = 0; m < randomArray.Length; m++)
+    {
+        Console.Write (randomArray [m] + " ");
+    }
+}
