@@ -6,7 +6,7 @@ string [] CreateUserArray (int n)
     string [] userArray = new string [n];
     for (int index = 0; index < userArray.Length; index++)
     {
-        Console.Write ("Введите элемент строкового массива: ");     
+        Console.Write ("Введите элемент массива строк: ");     
         userArray [index] = Console.ReadLine ();
     }
     return userArray;
@@ -31,14 +31,16 @@ string [] CreateNewArrayFrom3SymbolsElements (string [] anyArray, int count)
 void ShowArray (string [] randomArray)
 // метод по выведению массива на экран
 {
-    for (int m = 0; m < randomArray.Length; m++)
+    Console.Write ($"[{randomArray [0]}, ");
+    for (int m = 1; m < randomArray.Length - 2; m++)
     {
-        Console.Write (randomArray [m] + " ");
+        Console.Write ($"{randomArray [m]}, ");
     }
+    Console.Write ($"{randomArray [randomArray.Length - 1]}]");
 }
 
-// код самой программы
-Console.WriteLine ("Введите количество элементов создаваемого массива: ");
+// код основной программы
+Console.WriteLine ("Введите количество элементов создаваемого массива строк: ");
 int size = Convert.ToInt32 (Console.ReadLine ());
 string [] array = CreateUserArray (size);
 
